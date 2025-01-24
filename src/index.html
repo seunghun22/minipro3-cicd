@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD 파이프라인 배포 성공!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-card">
+            <div class="success-icon">🚀</div>
+            <h1>CI/CD 파이프라인 배포 성공!</h1>
+            
+            <div class="deployment-info">
+                <p>배포 시간: <span id="deployTime"></span></p>
+                <div class="pipeline-status">
+                    <span class="status-badge">Pipeline Status: SUCCESS ✅</span>
+                </div>
+            </div>
+
+            <div class="pipeline-steps">
+                <div class="step">GitHub</div>
+                <div class="arrow">➡️</div>
+                <div class="step">CodePipeline</div>
+                <div class="arrow">➡️</div>
+                <div class="step">CodeBuild</div>
+                <div class="arrow">➡️</div>
+                <div class="step">S3</div>
+            </div>
+
+            <div class="aws-services">
+                <h2>사용된 AWS 서비스</h2>
+                <ul>
+                    <li>🔄 AWS CodePipeline</li>
+                    <li>🏗️ AWS CodeBuild</li>
+                    <li>📦 Amazon S3</li>
+                    <li>🌐 Amazon CloudFront</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
