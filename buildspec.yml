@@ -12,7 +12,7 @@ phases:
       - ls -la src/
       
 artifacts:
-  name: BuildArtifact
   files:
     - '**/*'
   base-directory: src
+  name: BuildArtifact
