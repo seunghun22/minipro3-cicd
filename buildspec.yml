@@ -8,22 +8,19 @@ phases:
   pre_build:
     commands:
       - echo "Starting build process..."
-      - echo "Source directory contents:"
-      - ls -la src/
       
   build:
     commands:
       - echo "Building..."
-      - cp -r src/* .
+      - mkdir -p build
+      - cp -r src/* build/
       
   post_build:
     commands:
       - echo "Build completed"
-      - echo "Current directory contents:"
-      - ls -la
+      - ls -la build/
 
 artifacts:
   files:
-    - index.html
-    - css/*
-    - js/*
+    - '**/*'
+  base-directory: build
