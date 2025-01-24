@@ -5,26 +5,14 @@ phases:
     runtime-versions:
       nodejs: 18
   
-  pre_build:
-    commands:
-      - echo "Starting build process..."
-      - pwd
-      - ls -la
-      
   build:
     commands:
-      - echo "Building..."
+      - echo "Copying files..."
+      - ls -la
       - ls -la src/
       
-  post_build:
-    commands:
-      - echo "Build completed"
-      - cp -r src/* .
-      - ls -la
-
 artifacts:
   files:
-    - index.html
-    - css/*
-    - js/*
+    - '**/*'
+  base-directory: src
   discard-paths: false
