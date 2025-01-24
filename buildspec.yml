@@ -10,15 +10,12 @@ phases:
   pre_build:
     commands:
       - echo "Starting build process at `date`"
-      - ls -la
       
   build:
     commands:
       - echo "Building static files..."
       - echo "Current directory contents:"
       - ls -la
-      - echo "src directory contents:"
-      - ls -la src/
       
   post_build:
     commands:
@@ -27,5 +24,8 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - index.html
+    - css/**/*
+    - js/**/*
   base-directory: src
+  discard-paths: false
