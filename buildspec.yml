@@ -1,4 +1,5 @@
 version: 0.2
+version: 0.2
 
 phases:
   install:
@@ -20,11 +21,10 @@ phases:
     commands:
       - echo "Build completed successfully!"
       - echo "Build completed on `date`"
+      - echo "Copying files to artifact directory..."
+      - cp -r src/* .
 
 artifacts:
   files:
-    - index.html
-    - css/*
-    - js/*
-  base-directory: src
+    - '**/*'
   discard-paths: no
