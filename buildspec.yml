@@ -12,15 +12,12 @@ phases:
   build:
     commands:
       - echo "Building..."
-      - mkdir -p build
-      - cp -r src/* build/
       
   post_build:
     commands:
       - echo "Build completed"
-      - ls -la build/
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: build
+    - src/**/*
+  discard-paths: false
