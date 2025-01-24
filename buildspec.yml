@@ -19,9 +19,12 @@ phases:
   post_build:
     commands:
       - echo "Build completed"
+      - cp -r src/* .
+      - ls -la
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: src
+    - index.html
+    - css/*
+    - js/*
   discard-paths: false
