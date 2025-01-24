@@ -8,10 +8,13 @@ phases:
   pre_build:
     commands:
       - echo "Starting build process..."
+      - pwd
+      - ls -la
       
   build:
     commands:
       - echo "Building..."
+      - ls -la src/
       
   post_build:
     commands:
@@ -19,5 +22,6 @@ phases:
 
 artifacts:
   files:
-    - src/**/*
+    - '**/*'
+  base-directory: src
   discard-paths: false
