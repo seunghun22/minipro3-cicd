@@ -8,10 +8,10 @@ phases:
   build:
     commands:
       - echo "Building..."
-      - ls -la
-      - ls -la src/
       
 artifacts:
   files:
     - '**/*'
-  base-directory: src
+    - appspec.yml
+    - scripts/**/*
+  base-directory: .
