@@ -7,11 +7,12 @@ phases:
   
   build:
     commands:
-      - echo "Preparing deployment files..."
-      - cd src
+      - echo "Building..."
       - ls -la
+      - ls -la src/
       
 artifacts:
+  name: BuildArtifact
   files:
     - '**/*'
   base-directory: src
