@@ -4,25 +4,26 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
-    commands:
-      - echo "Installing dependencies..."
   
   pre_build:
     commands:
-      - echo "Starting build process at `date`"
+      - echo "Starting build process..."
+      - echo "Source directory contents:"
+      - ls -la src/
       
   build:
     commands:
-      - echo "Building static files..."
-      - echo "Current directory contents:"
-      - ls -la src/
+      - echo "Building..."
+      - cp -r src/* .
       
   post_build:
     commands:
-      - echo "Build completed successfully!"
+      - echo "Build completed"
+      - echo "Current directory contents:"
+      - ls -la
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: src
-  discard-paths: false
+    - index.html
+    - css/*
+    - js/*
