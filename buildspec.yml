@@ -3,38 +3,28 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18  # Node.js 런타임 설정
+      nodejs: 18
     commands:
       - echo "Installing dependencies..."
-      - npm install -g html-minifier-terser  # HTML 최적화 도구 설치
-
+  
   pre_build:
     commands:
       - echo "Starting build process at `date`"
       - echo "Preparing files..."
-
+      
   build:
     commands:
       - echo "Building static files..."
-      # HTML 파일 최적화
-      - html-minifier-terser src/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true > index.html
-      # 현재 시간을 파일에 기록
-      - echo "Build completed at `date`" > build_time.txt
-
+      - echo "Build started on `date`"
+      - cp -r src/* .
+      
   post_build:
     commands:
       - echo "Build completed successfully!"
-      - echo "Preparing artifacts for deployment..."
+      - echo "Build completed on `date`"
 
 artifacts:
   files:
-    - index.html
-    - build_time.txt
-    - src/css/*
-    - src/js/*
+    - '**/*'
+  base-directory: src
   discard-paths: no
-  base-directory: .
-
-cache:
-  paths:
-    - 'node_modules/**/*'
