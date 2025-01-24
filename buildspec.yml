@@ -15,16 +15,15 @@ phases:
     commands:
       - echo "Building static files..."
       - echo "Current directory contents:"
-      - ls -la
+      - ls -la src/
       
   post_build:
     commands:
       - echo "Build completed successfully!"
-      - echo "Build completed on `date`"
+      - echo "Copying files..."
+      - cp -r src/* /codebuild/output/src1333449255/src/
 
 artifacts:
   files:
     - '**/*'
-  base-directory: src
-  discard-paths: false
-  name: web-artifacts
+  base-directory: /codebuild/output/src1333449255/src
