@@ -20,10 +20,9 @@ phases:
   post_build:
     commands:
       - echo "Build completed successfully!"
-      - echo "Copying files..."
-      - cp -r src/* /codebuild/output/src1333449255/src/
 
 artifacts:
   files:
     - '**/*'
-  base-directory: /codebuild/output/src1333449255/src
+  base-directory: src
+  discard-paths: false
